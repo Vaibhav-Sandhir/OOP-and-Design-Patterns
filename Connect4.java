@@ -4,7 +4,8 @@ public class Connect4{
     public static void main(String args[]){
         Player p1 = new Player("Vaibhav", "R");
         Player p2 = new Player("Vicky", "B");
-        Game game = new Game(6, 7, 4, p1, p2, 3);
+        Grid grid = new Grid(6, 7, 4);
+        Game game = new Game(p1, p2, 3, grid);
         game.play(); 
     }
 }
@@ -15,8 +16,8 @@ public class Game{
     Player p2;
     int target;
     
-    public Game(int n, int m, int x, Player p1, Player p2, int target){
-        this.grid = new Grid(n, m, x);
+    public Game(Player p1, Player p2, int target, Grid grid){
+        this.grid = grid; 
         this.p1 = p1;
         this.p2 = p2;
         this.target = target;
